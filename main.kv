@@ -1,0 +1,65 @@
+Screen:
+    name: "MainScreen"
+    FloatLayout:
+        
+            
+        
+        MDLabel:
+            text: "TubeOder"
+            pos_hint : {'center_x':0.5 ,'center_y':0.9}
+            halign :"center"
+
+        MDTextField:
+            id:link
+            hint_text: "Enter YouTube Link"
+            helper_text:"forget"
+            pos_hint : {'center_x':0.5 ,'center_y':0.7}
+            width: 500
+            
+          
+        MDRectangleFlatButton:
+            text: "Select Path to Download"
+            pos_hint : {'center_x':0.5 ,'center_y':0.6}
+            text_color: 0, 0, 1, 1
+            md_bg_color: 1, 1, 0, 1
+            on_release: app.submit()
+            width: 500
+        
+        MDRectangleFlatButton:
+            text: "Audio"
+            pos_hint : {'center_x':0.4 ,'center_y':0.5}
+            text_color: 0, 0, 1, 1
+            md_bg_color: 1, 1, 0, 1
+            on_release: app.submit()
+            width: 500
+        
+        MDRectangleFlatButton:
+            text: "Video"
+            pos_hint : {'center_x':0.6 ,'center_y':0.5}
+            text_color: 0, 0, 1, 1
+            md_bg_color: 1, 1, 0, 1
+            on_release: app.submit()
+            width: 500
+        MDRectangleFlatButton:
+            text: "Quality"
+            pos_hint : {'center_x':0.5 ,'center_y':0.4}
+            text_color: 0, 0, 1, 1
+            md_bg_color: 1, 1, 0, 1
+            on_release: app.submit()
+            width: 500        
+        MDRectangleFlatButton:
+            text: "Download"
+            pos_hint : {'center_x':0.5 ,'center_y':0.3}
+            text_color: 0, 0, 1, 1
+            md_bg_color: 1, 1, 0, 1
+            on_release: app.submit()
+            width: 500       
+        
+       
+       
+       
+            
+            
+
+
+
