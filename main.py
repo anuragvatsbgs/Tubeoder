@@ -8,6 +8,8 @@ from kivy.clock import Clock
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.list import OneLineListItem
+from kivymd.uix.list import OneLineAvatarIconListItem
+from kivy.storage.jsonstore import JsonStore
 
 
 #Window.size = (400, 520)
@@ -43,15 +45,31 @@ class TubeOder(MDApp):
             screen_manager.get_screen('MainScreen').ids.imagexpa.source=youtube_1.thumbnail_url
             screen_manager.get_screen('MainScreen').ids.titlexpa.text=youtube_1.title
             screen_manager.get_screen('MainScreen').ids.disabled_button.disabled = False
-            videos=youtube_1.streams
-            vid=list(enumerate(videos))
-            for i in vid:
-                screen_manager.get_screen('Conv').ids.container.add_widget(OneLineListItem(text=f"{i}"))
+            self.videos=youtube_1.streams
+            
+            for i in self.videos:
+                screen_manager.get_screen('Conv').ids.container.add_widget(OneLineListItem(text=f"{i}", on_release=self.presser))
+            
                 
 
     def close_username_dialogue(self,obj):
         self.dialog.dismiss()
+        
+    def presser(self, onelinelistitem):
+        sef=self.videos
+        vid=list(enumerate(self.videos))
+        sef1=onelinelistitem.text
+        for i in self.videos:
+            print(sef1)
+            
+            if sef1==sef:
+                print("sucessfully")
+            else:
+                print("error")
+            print(sef)   
 
+        
+        
     def download_button(self):
         videos=youtube_1.streams.all()
         vid=list(enumerate(videos))
