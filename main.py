@@ -59,26 +59,15 @@ class TubeOder(MDApp):
         sef=self.videos
         vid=list(enumerate(self.videos))
         sef1=onelinelistitem.text
-        for i in self.videos:
-            print(sef1)
-            
-            if sef1==sef:
+        length=len(sef)
+        for i in range(length):
+            if str(sef[i])==str(sef1):
+                sef[i].download()
                 print("sucessfully")
-            else:
-                print("error")
-            print(sef)   
-
+        screen_manager.current="MainScreen"
         
         
-    def download_button(self):
-        videos=youtube_1.streams.all()
-        vid=list(enumerate(videos))
-        for i in vid:
-            print(i)
-        print()
-        strm=int(input("enter :  "))
-        videos[strm].download()
-        print("sucessfully")
+    
 
 
 
