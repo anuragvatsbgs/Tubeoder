@@ -10,6 +10,7 @@ from kivymd.uix.dialog import MDDialog
 from kivymd.uix.list import OneLineListItem
 from kivymd.uix.list import OneLineAvatarIconListItem
 from kivy.storage.jsonstore import JsonStore
+import requests
 
 
 #Window.size = (400, 520)
@@ -21,18 +22,35 @@ class TubeOder(MDApp):
     def build(self):
         kv = Builder.load_file("welcomescreen.kv")
         kv1 = Builder.load_file("main.kv")
-        kv2 = Builder.load_file("conv.kv") 
+        kv2 = Builder.load_file("conv.kv")
+        kv3 = Builder.load_file("final.kv")
         self.theme_cls.primary_palette = "Green"
         screen_manager.add_widget(kv)
         screen_manager.add_widget(kv1)
         screen_manager.add_widget(kv2)
+        screen_manager.add_widget(kv3)
         return screen_manager
 
     def on_start(self):
+        url =screen_manager.get_screen('MainScreen').ids.imagexpa.source
+        timeout = 10
+        try:
+            request = requests.get(url, timeout=timeout)
+            self.alpha=1
+        except (requests.ConnectionError, requests.Timeout) as exception:
+            self.alpha=0
+        
+            
+        
         Clock.schedule_once(self.change_screen, 10)
 
     def change_screen(self, dt):
-        screen_manager.current="MainScreen"
+        if self.alpha==0:
+            cancel_btn_username_dialogue = MDFlatButton(text='Cancel',on_release = self.close_username_dialogue)
+            self.dialog = MDDialog(title = 'Error',text = "Please check your internet connection",size_hint = (0.7,0.2),buttons = [cancel_btn_username_dialogue])
+            self.dialog.open()
+        else:
+            screen_manager.current="MainScreen"
     
     def submit(self):
         link=screen_manager.get_screen('MainScreen').ids.username_text_fied.text
@@ -64,7 +82,7 @@ class TubeOder(MDApp):
             if str(sef[i])==str(sef1):
                 sef[i].download()
                 print("sucessfully")
-        screen_manager.current="MainScreen"
+        screen_manager.current="FinalScreen"
         
         
     
