@@ -1,0 +1,25 @@
+Screen:
+    name: "FinalScreen"
+    FloatLayout:
+        
+            
+        
+        MDLabel:
+            id: sucess
+            text: "Please Wait"
+            font_style: 'H3'
+            pos_hint : {'center_x':0.5 ,'center_y':0.75}
+            halign :"center"
+            
+        MDFloatingActionButton:
+            id: back_to_home  
+            icon:'home.png'
+            md_bg_color:app.theme_cls.primary_color
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+            user_font_size: '45sp'
+            on_press: root.manager.current = 'MainScreen'
+            
+        MDLabel:
+            text: "email us: infoanusav@gmail.com"
+            pos_hint : {'center_x':0.5 ,'center_y':0.2}
+            halign :"center"
