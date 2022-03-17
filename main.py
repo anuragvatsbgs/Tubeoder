@@ -14,6 +14,7 @@ import requests
 import os
 import time
 
+
 #Window.size = (400, 520)
 
 class TubeOder(MDApp):
@@ -86,6 +87,7 @@ class TubeOder(MDApp):
                 download_path = os.path.join(home, 'Tubeoder')
                 self.sto.download(download_path)
                 screen_manager.get_screen('FinalScreen').ids.sucess.text="Sucessfull!"
+                screen_manager.get_screen('FinalScreen').ids.sucess1.text=download_path
        
         screen_manager.current="FinalScreen"
 TubeOder().run()

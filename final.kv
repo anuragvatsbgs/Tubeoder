@@ -10,6 +10,12 @@ Screen:
             font_style: 'H3'
             pos_hint : {'center_x':0.5 ,'center_y':0.75}
             halign :"center"
+        MDLabel:
+            id: sucess1
+            text: "Saved in Tubeoder"
+            font_style: 'H5'
+            pos_hint : {'center_x':0.5 ,'center_y':0.68}
+            halign :"center"
             
         MDFloatingActionButton:
             id: back_to_home  
@@ -19,6 +25,11 @@ Screen:
             user_font_size: '45sp'
             on_press: root.manager.current = 'MainScreen'
             
+        MDLabel:
+            text: "Website https://www.anusav.in"
+            pos_hint : {'center_x':0.5 ,'center_y':0.24}
+            halign :"center"
+        
         MDLabel:
             text: "email us: infoanusav@gmail.com"
             pos_hint : {'center_x':0.5 ,'center_y':0.2}
