@@ -2,35 +2,50 @@ Screen:
     name: "FinalScreen"
     FloatLayout:
         
+        
+        Image:
             
+            source: 'sucess.png'
+            pos_hint: {'center_x':0.5,'center_y':0.85}
+            size_hint_y: "0.15sp"     
+        MDLabel:
+            id: sucess2
+            text: "Download"
+            font_style: 'H4'
+            pos_hint : {'center_x':0.5 ,'center_y':0.68}
+            halign :"center"
         
         MDLabel:
             id: sucess
-            text: "Please Wait"
+            text: "Please Wait..."
             font_style: 'H3'
-            pos_hint : {'center_x':0.5 ,'center_y':0.75}
+            pos_hint : {'center_x':0.5 ,'center_y':0.59}
             halign :"center"
         MDLabel:
             id: sucess1
-            text: "Saved in Tubeoder"
+            text: ""
             font_style: 'H5'
-            pos_hint : {'center_x':0.5 ,'center_y':0.68}
+            pos_hint : {'center_x':0.5 ,'center_y':0.52}
             halign :"center"
             
         MDFloatingActionButton:
-            id: back_to_home  
+            id: back_to_home       
             icon:'home.png'
-            md_bg_color:app.theme_cls.primary_color
-            pos_hint: {'center_x':0.5,'center_y':0.5}
+            pos_hint: {'center_x':0.5,'center_y':0.3}
             user_font_size: '45sp'
             on_press: root.manager.current = 'MainScreen'
             
         MDLabel:
             text: "Website https://www.anusav.in"
-            pos_hint : {'center_x':0.5 ,'center_y':0.24}
+            pos_hint : {'center_x':0.5 ,'center_y':0.14}
             halign :"center"
         
         MDLabel:
             text: "email us: infoanusav@gmail.com"
-            pos_hint : {'center_x':0.5 ,'center_y':0.2}
+            pos_hint : {'center_x':0.5 ,'center_y':0.1}
+            
             halign :"center"
+            
+            
+            
+            
